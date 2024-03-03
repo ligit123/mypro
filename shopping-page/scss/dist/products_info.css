@@ -1,0 +1,172 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.3);
+}
+
+.shop_head {
+  width: 100%;
+  height: 180px;
+}
+.shop_head .logo_name {
+  width: 100%;
+  height: 140px;
+  background-color: #a00;
+  color: #fff;
+}
+.shop_head .shop_nav {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 400px;
+  background-color: #333;
+}
+.shop_head .shop_nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.shop_head .shop_nav ul a {
+  color: #fff;
+}
+
+.crumb_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  padding: 0 300px;
+  background-color: #eee;
+}
+.crumb_wrap .crumb {
+  display: flex;
+}
+.crumb_wrap .crumb a {
+  font-size: 14px;
+}
+.crumb_wrap .crumb span {
+  padding: 0 10px;
+  font-size: 14px;
+}
+.crumb_wrap .contact {
+  display: flex;
+}
+.crumb_wrap .contact .goodshop {
+  font-size: 12px;
+  color: #fff;
+  padding: 2px;
+  background-color: #d22;
+}
+.crumb_wrap .contact .hove_wrap {
+  display: flex;
+}
+.crumb_wrap .contact .hove_wrap .item {
+  padding: 0 0 0 20px;
+}
+.crumb_wrap .contact .hove_wrap a {
+  font-size: 14px;
+}
+
+.product_intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 300px 0;
+}
+.product_intro .preview_wrap {
+  width: 450px;
+}
+.product_intro .preview_wrap .preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+  border: 1px solid #ddd;
+  cursor: move;
+}
+.product_intro .preview_wrap .preview > img {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 448px;
+}
+.product_intro .preview_wrap .preview .y_box {
+  display: none;
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background-color: rgba(255, 255, 51, 0.4);
+}
+.product_intro .preview_wrap .preview .big_pic {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 448px;
+  width: 555px;
+  height: 555px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  z-index: 999;
+}
+.product_intro .preview_wrap .preview .big_pic > img {
+  display: block;
+  position: absolute;
+  width: 948px;
+}
+.product_intro .preview_wrap .spec_forward, .product_intro .preview_wrap .spec_backward {
+  font-size: 40px;
+  cursor: pointer;
+}
+.product_intro .preview_wrap .spec_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+.product_intro .preview_wrap .spec_list .small_list {
+  width: 380px;
+  height: 60px;
+}
+.product_intro .preview_wrap .spec_list ul {
+  display: flex;
+}
+.product_intro .preview_wrap .spec_list ul li {
+  width: 60px;
+  height: 60px;
+  margin: 0 7px;
+  border: 2px solid #f22;
+  overflow: hidden;
+}
+.product_intro .preview_wrap .spec_list ul img {
+  display: block;
+}
+.product_intro .preview_wrap .preview_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 0 0;
+}
+.product_intro .preview_wrap .preview_info a {
+  margin: 0 10px 0 0;
+  font-size: 2px;
+}
+.product_intro .preview_wrap .preview_info a i {
+  font-size: 14px;
+  color: #d22;
+}
+.product_intro .preview_wrap .preview_info a:hover {
+  color: #d22;
+}
+.product_intro .preview_wrap .purchase_op {
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+.product_intro .preview_wrap .purchase_op a {
+  font-size: 14px;
+  padding: 5px 15px;
+  border: 1px solid #ddd;
+}
+.product_intro .preview_wrap .purchase_op a:hover {
+  border: 1px solid #d22;
+}

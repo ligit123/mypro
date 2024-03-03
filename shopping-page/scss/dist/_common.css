@@ -1,0 +1,25 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.3);
+}
+
+.a_height {
+  display: block;
+  height: 21px;
+}
+
+a:hover {
+  color: #e34;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-image: url("../images/pexels-skitterphoto.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

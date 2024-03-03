@@ -1,0 +1,54 @@
+@import "var";
+@import "mixin";
+
+.m_app {
+    position: relative;
+    width: 1400px;
+    margin: 20px auto 0;
+}
+.seckill {
+    height: 260px;
+}
+#sk_countdown {
+    @include m_flex();
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    color: #fff;
+    background-color: $mainred;
+    &:hover {
+        color: #fff;
+    }
+    .miao_words {
+        padding: 0 0 30px 0;
+        font-size: 30px;
+    }
+    .part_time {
+        position: relative;
+    }
+    .part_time, .deadline {
+        @include m_flex();
+        flex-direction: column;
+    }
+    .miao_pic {
+        padding: 0 0 40px 0;
+        font-size: 30px;
+    }
+    .deadline {
+        padding: 0 0 10px 0;
+        .dtime {
+            font-weight: 700;
+        }
+    }
+    .left_time {
+        @include m_flex();
+        width: 100%;
+        justify-content: space-between;
+        span {
+            font-weight: 700;
+            font-size: 20px;
+            background-color: #333;
+            padding: 0 2px;
+        }
+    }
+}

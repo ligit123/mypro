@@ -1,0 +1,130 @@
+@import "mixin";
+@import "var";
+/** 顶栏样式 **/
+.top_bar {
+    // position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: #8ad3e0;
+    .topbar_box, .shortcut, .wel_box, .short_nav {
+        @include m_flex(space-between);
+        height: 100%;
+        line-height: 40px;
+    }
+    .wel_box, .short_nav {
+        padding: 0 0 0 10px;
+    }
+    /** 位置区域样式 **/
+    ._location {
+        position: relative;
+        height: 100%;
+        line-height: 40px;
+        .icon-location::before {
+            content: '\ed49';
+            padding: 0 3px 0 0;
+            color: $mainred;
+        }
+        /** 当前所在地显示区域样式 **/
+        .now_loc {
+            @include m_flex();
+            padding: 0 5px;
+            &:hover {
+                background-color: #eee;
+                span {
+                    color: $mainred;
+                }
+            }
+        }
+        /** 可选其他地区 和 语言 样式  隐藏 **/
+        .area {
+            display: none;
+            position: absolute;
+            top: 40px;
+            width: 300px;
+            background-color: #eee;
+        }
+        /** 本地区 各个省 直辖市 **/
+        .province {
+            @include m_flex(space-around);
+            flex-wrap: wrap;
+            padding: 10px 0;
+            li {
+                width: 60px;
+                padding: 5px 5px;
+                text-align: center;
+                line-height: 25px;
+                a {
+                    display: inline-block;
+                    font-size: 12px;
+                    width: 100%;
+                    height: 100%;
+                    &:hover {
+                        background-color: #ddd;
+                    }
+                }
+            }
+        }
+        .divid_line {
+            width: 260px;
+            height: 1px;
+            margin: 0 auto;
+            border-top: rgba(0, 0, 0, 0.2) 1px dotted;
+        }
+        /** 地区专享版、可用站点 边距 **/
+        .area_exclusive, .available_sites {
+            padding: 10px 18px;
+            font-size: 12px;
+        }
+
+        /** 地区专享版 **/
+        .exclusive_bd {
+            @include m_flex(flex-start);
+            flex-wrap: wrap;
+            li {
+                width: 132px;
+                line-height: 30px;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    &:hover {
+                        color: $mainred;
+                    }
+                }
+                // &:hover a {
+                //     color: $mainred;
+                // }
+            }
+        }
+
+        /** 可用站点 **/
+        .site_bd {
+            @extend .exclusive_bd;
+        }
+
+    }
+    /** 登录、注册样式 **/
+    .wel_box a {
+        &:first-child {
+            font-weight: 700;
+        }
+        &:last-child {
+            margin: 0 0 0 10px;
+            color: $mainred;
+        }
+        &:hover {
+            color: $mainblue;
+        }
+    }
+    /** 顶栏右侧导航样式 **/
+    .short_nav {
+        li {
+            padding: 0 0 0 10px;
+        }
+        a {
+            @include m_flex();
+            &:hover {
+                color: $mainblue;
+            }
+        }
+    }
+}

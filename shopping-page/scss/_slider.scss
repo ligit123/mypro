@@ -1,0 +1,19 @@
+@import "mixin";
+.slide_bar {
+    position: absolute;
+    /* position: fixed; */
+    @include m_flex(space-between);
+    flex-direction: column;
+    width: 40px;
+    // min-height:250px;
+    background-color: #2af;
+    transition: transform 0.3s;
+    & a {
+        @include m_flex();
+        width: 40px;
+        height: 50px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+    }
+}

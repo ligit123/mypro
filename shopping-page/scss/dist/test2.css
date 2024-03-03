@@ -1,0 +1,206 @@
+.m_nav {
+  margin: 0 auto;
+  position: relative;
+  width: 560px;
+  padding: 30px 0 0 0;
+}
+.m_nav .slipper {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: gold;
+  border-radius: 50%;
+  z-index: -1;
+}
+.m_nav .navs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.m_nav a {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.m_nav a:hover {
+  color: #22f;
+}
+
+.m_test {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background-color: #da2;
+}
+
+.sliwrap {
+  position: relative;
+  overflow: hidden;
+}
+.sliwrap .indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 2;
+}
+.sliwrap .indicators span {
+  display: block;
+  margin: 0 20px 0 0;
+  width: 20px;
+  height: 20px;
+  background-color: #4f3;
+  border-radius: 20%;
+  transition: width 0.2s;
+}
+.sliwrap .indicators .indicator_active {
+  width: 40px;
+}
+.sliwrap .pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500%;
+}
+.sliwrap .pics a {
+  display: block;
+  transform: translateX(-100%);
+}
+.sliwrap .pics img {
+  width: 100%;
+}
+
+.pinf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.pinf .pname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.pinf .pname span {
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.pinf .pname span:hover {
+  background-color: #df1;
+}
+.pinf .ppic {
+  position: relative;
+  width: 200px;
+  height: 100%;
+}
+.pinf .ppic img {
+  position: absolute;
+  width: 200px;
+}
+
+.comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.comment .com_cont .one_cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+.comment .com_cont span {
+  cursor: pointer;
+  color: #22f;
+}
+
+.todolist .listitwrap {
+  width: 100%;
+  height: 60px;
+  background-color: #215863;
+}
+.todolist .listit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700PX;
+  margin: 0 auto;
+  line-height: 60px;
+}
+.todolist .listit p {
+  font-size: 30px;
+  color: #fff;
+}
+.todolist .listit .dowhat {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 1px solid #4f3;
+  color: #333;
+  appearance: none;
+  display: block;
+  outline: 0;
+  text-decoration: none;
+  padding: 0 5px;
+}
+.todolist h3 {
+  width: 700px;
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+  font-size: 40px;
+}
+.todolist .m_doing, .todolist .m_done {
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 0 12px 0;
+}
+.todolist .m_doing .what, .todolist .m_done .what {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  background-color: rgba(170, 255, 153, 0.8);
+  border-radius: 4px;
+}
+.todolist .m_doing .what .thing, .todolist .m_done .what .thing {
+  position: absolute;
+  left: 40px;
+  line-height: 40px;
+}
+.todolist .m_doing .what .don, .todolist .m_done .what .don {
+  margin: 0 0 0 10px;
+  width: 20px;
+  height: 20px;
+}
+.todolist .m_doing .what .m_rem, .todolist .m_done .what .m_rem {
+  margin: 0 10px 0 0;
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+}
+.todolist .m_done .what {
+  filter: grayscale(100%);
+}
+.todolist .m_done .what .thing, .todolist .m_done .what .m_rem {
+  color: #888;
+}
+.todolist .m_done .what .don {
+  outline: 0;
+  text-decoration: none;
+  border: 1px solid #888;
+}

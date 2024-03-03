@@ -1,0 +1,21 @@
+.slide_bar {
+  position: absolute;
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 40px;
+  background-color: #2af;
+  transition: transform 0.3s;
+}
+.slide_bar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}

@@ -1,0 +1,82 @@
+@import "mixin";
+@import "var";
+/** 尾部区域 **/
+.footer {
+    margin-top: 10px;
+    .mod_service ul {
+        @include m_flex();
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(#333, 0.3);
+        li {
+            @include m_flex();
+            padding: 0 100px 0 0;
+            font-size: 18px;
+            font-weight: 700;
+            h5 {
+                width: 50px;
+                height: 50px;
+                margin: 0 10px 0 0;
+                @include m_bg('../images/logo.png');
+                text-indent: -999px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .mod_help {
+        @include m_flex(space-between, flex-start);
+        padding: 20px 20px;
+        border-bottom: 1px solid rgba(#333, 0.3);
+        .mod_help_nav, .mod_help_cover {
+            width: 200px;
+        }
+        .mod_help_nav_tit, .mod_help_cover_tit {
+            font-size: 18px;
+            padding: 0 0 10px 0;
+        }
+        .mod_help_nav_con, .mod_help_cover_con {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .mod_help_cover_more {
+            padding: 10px 0;
+            text-align: right;
+        }
+    }
+
+    .mod_copyright {
+        @include m_flex();
+        flex-direction: column;
+        padding: 20px 0 0 0;
+        .mod_copyright_split {
+            padding: 0 10px;
+            color: rgba(#333, 0.3);
+        }
+        .mod_copyright_links, .mod_copyright_info {
+            font-size: 14px;
+            text-align: center;
+        }
+        .mod_copyright_info {
+            padding: 20px 0 0 0;
+            color: rgba(#333, 0.6);
+            line-height: 24px;
+            a {
+                color: rgba(#333, 0.7);
+                &:hover {
+                    color: $mainred;
+                }
+            }
+        }
+        .mod_copyright_auth {
+            padding: 20px 0 50px;
+            a {
+                display: inline-block;
+                width: 120px;
+                height: 90px;
+                margin: 0 20px 0 0;
+                background-color: #5f2;
+            }
+        }
+    }
+
+}

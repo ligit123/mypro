@@ -1,0 +1,59 @@
+.m_app {
+  position: relative;
+  width: 1400px;
+  margin: 20px auto 0;
+}
+
+.seckill {
+  height: 260px;
+}
+
+#sk_countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  color: #fff;
+  background-color: #e34;
+}
+#sk_countdown:hover {
+  color: #fff;
+}
+#sk_countdown .miao_words {
+  padding: 0 0 30px 0;
+  font-size: 30px;
+}
+#sk_countdown .part_time {
+  position: relative;
+}
+#sk_countdown .part_time, #sk_countdown .deadline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#sk_countdown .miao_pic {
+  padding: 0 0 40px 0;
+  font-size: 30px;
+}
+#sk_countdown .deadline {
+  padding: 0 0 10px 0;
+}
+#sk_countdown .deadline .dtime {
+  font-weight: 700;
+}
+#sk_countdown .left_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+#sk_countdown .left_time span {
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #333;
+  padding: 0 2px;
+}

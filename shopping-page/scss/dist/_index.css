@@ -1,0 +1,344 @@
+@charset "UTF-8";
+.shows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  margin-top: 20px;
+  /** 导航栏分类菜单 **/
+  /** banner区域 **/
+  /** 个性化加强模块 **/
+}
+.shows .nav_cate_menu, .shows .bannner, .shows .plus_plate {
+  height: 100%;
+}
+.shows .nav_cate_menu {
+  position: relative;
+  width: 220px;
+  background-color: #fff;
+}
+.shows .nav_cate_menu .cate_menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px 0;
+}
+.shows .nav_cate_menu .cate_menu_item {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 0 0 20px;
+  transition: background-color linear 0.3s;
+}
+.shows .nav_cate_menu .cate_menu_item:hover {
+  background-color: #ddd;
+}
+.shows .nav_cate_menu .cate_part {
+  position: absolute;
+  top: 0;
+  left: 220px;
+  width: 1180px;
+  min-height: 500px;
+  background-color: #fff;
+  border: 1px solid #f7f7f7;
+  box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.3);
+  padding: 20px;
+}
+.shows .nav_cate_menu .cate_part .cate_part_cont1 {
+  width: 930px;
+}
+.shows .nav_cate_menu .cate_part .cate_channel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 25px;
+  line-height: 25px;
+}
+.shows .nav_cate_menu .cate_part .cate_channel .cate_channel_lk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 0 10px 0 0;
+  color: #eee;
+  background-color: #222;
+  border-radius: 5px;
+}
+.shows .nav_cate_menu .cate_part .cate_channel .cate_channel_lk span {
+  padding: 0 3px 0 0;
+}
+.shows .nav_cate_menu .cate_part .cate_channel .cate_channel_lk:hover {
+  background-color: #e34;
+}
+.shows .nav_cate_menu .cate_part .cate_detail {
+  padding: 10px 0 0 0;
+}
+.shows .nav_cate_menu .cate_part .cate_detail .cate_detail_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 22px;
+  padding: 10px 0 0 0;
+  font-size: 14px;
+}
+.shows .nav_cate_menu .cate_part .cate_detail .cate_detail_tit {
+  width: 100px;
+  padding: 0 20px 0 0;
+  font-weight: 700;
+  text-align: right;
+}
+.shows .nav_cate_menu .cate_part .cate_detail .cate_detail_tit .cate_detail_tit_lk {
+  display: inline-flex;
+  align-items: center;
+}
+.shows .nav_cate_menu .cate_part .cate_detail .cate_detail_con {
+  width: 830px;
+}
+.shows .nav_cate_menu .cate_part .cate_detail .cate_detail_con .cate_detail_con_lk {
+  margin: 0 10px 0 0;
+}
+.shows .nav_cate_menu .cate_part .cate_part_cont2 {
+  width: 220px;
+}
+.shows .bannner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 930px;
+  background-color: #54d;
+}
+.shows .bannner .lbtn_wrap, .shows .bannner .rbtn_wrap {
+  position: absolute;
+  padding: 6px;
+  font-size: 24px;
+  color: #eee;
+  cursor: pointer;
+  background-color: rgba(255, 0, 255, 0.4);
+  transition: background-color, 0.3s;
+}
+.shows .bannner .lbtn_wrap:hover, .shows .bannner .rbtn_wrap:hover {
+  background-color: rgba(255, 0, 255, 0.7);
+}
+.shows .bannner .lbtn_wrap {
+  left: -7px;
+  border-radius: 0 50% 50% 0;
+}
+.shows .bannner .rbtn_wrap {
+  right: -7px;
+  border-radius: 50% 0 0 50%;
+}
+.shows .bannner .prev_pic_btn, .shows .bannner .next_pic_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shows .bannner .advert_pics {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+}
+.shows .bannner .advert_pics .advert_pics_wrapper {
+  width: 700px;
+  height: 500px;
+}
+.shows .bannner .advert_pics .carousel_pics {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+}
+.shows .bannner .advert_pics .carousel_pics img {
+  display: block;
+  width: 700px;
+  height: 500px;
+}
+.shows .bannner .advert_pics .slider_indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  height: 20px;
+}
+.shows .bannner .advert_pics .slider_indicators span {
+  width: 10px;
+  height: 10px;
+  background-color: #666;
+  border-radius: 50%;
+}
+.shows .bannner .advert_pics .slider_indicators span:not(:last-of-type) {
+  margin: 0 7px 0 0;
+}
+.shows .bannner .advert_pics .slider_indicators .indicator_active {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(221, 85, 68, 0.5);
+  border: 3px solid rgba(255, 0, 255, 0.5);
+}
+.shows .bannner .side_pics {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+}
+.shows .bannner .side_pics .side_pics_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 220px;
+  height: 500px;
+  overflow: hidden;
+}
+.shows .bannner .side_pics .s_pics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+.shows .bannner .side_pics .s_pics img {
+  display: block;
+  width: 220px;
+  height: 158px;
+}
+.shows .plus_plate {
+  width: 220px;
+  background-color: #fff;
+  font-size: 12px;
+}
+.shows .plus_plate .p_line {
+  width: 200px;
+  height: 1px;
+  margin: 10px auto;
+  background: linear-gradient(270deg, #fff, #ddd, #ddd, #fff);
+}
+.shows .plus_plate .p_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  padding: 10px 15px 0 15px;
+}
+.shows .plus_plate .p_user .user_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+.shows .plus_plate .p_user .user_area img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.shows .plus_plate .p_user .user_area .p_login {
+  padding: 0 0 0 15px;
+}
+.shows .plus_plate .p_user .user_profit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.shows .plus_plate .p_user .user_profit a {
+  display: block;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 13px;
+  transition: all linear 0.2s;
+}
+.shows .plus_plate .p_user .user_profit a:first-child {
+  color: #eee;
+  background-color: #e34;
+}
+.shows .plus_plate .p_user .user_profit a:first-child:hover {
+  background-color: #f04;
+}
+.shows .plus_plate .p_user .user_profit a:last-child {
+  color: #c37e00;
+  background-color: #333;
+}
+.shows .plus_plate .p_user .user_profit a:last-child:hover {
+  background-color: #e34;
+  color: #eee;
+}
+.shows .plus_plate .p_news {
+  height: 120px;
+  padding: 0 15px;
+}
+.shows .plus_plate .p_news .news_hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shows .plus_plate .p_news .news_tit {
+  font-size: 14px;
+  font-weight: 700;
+}
+.shows .plus_plate .p_news .news_list {
+  padding: 10px 0 0 0;
+}
+.shows .plus_plate .p_news .news_list li {
+  padding: 7px 0 0 0;
+}
+.shows .plus_plate .p_news .news_list a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.shows .plus_plate .p_news .news_list a span {
+  padding: 5px;
+  margin: 0 3px 0 0;
+  background-color: rgba(225, 30, 30, 0.1);
+  color: #e34;
+}
+.shows .plus_plate .p_service {
+  height: 238px;
+  padding: 0 15px;
+}
+.shows .plus_plate .p_service ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.shows .plus_plate .p_service ul li {
+  width: 60px;
+}
+.shows .plus_plate .p_service ul li a, .shows .plus_plate .p_service ul li i {
+  transition: color 0.2s ease;
+}
+.shows .plus_plate .p_service ul li:nth-of-type(2n) i {
+  color: #d54;
+}
+.shows .plus_plate .p_service ul li:nth-of-type(2n+1) i {
+  color: #54d;
+}
+.shows .plus_plate .p_service ul li :hover i {
+  color: #e34;
+}
+.shows .plus_plate .p_service ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.shows .plus_plate .p_service ul a i {
+  font-size: 24px;
+}
+.shows .plus_plate .p_service ul a span {
+  font-size: 14px;
+}

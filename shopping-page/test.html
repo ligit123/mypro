@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/icon.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script type="module" src="./slow_out.js"></script>
+</head>
+<style>
+    /* body {
+        position: relative;
+    } */
+    .test {
+        position: relative;
+        width: 10vw;
+        height: 100px;
+        background-color: #bfa;
+    }
+    .inte {
+        position: absolute;
+        width: 5vw;
+        height: 50px;
+        background-color: #45f;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+    }
+    .m_input {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .m_input input {
+        width: 200px;
+        height: 30px;
+        padding: 0 5px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background-color: #ddd;
+        text-decoration: none;
+        outline-style: none ;
+        font-size: 16px;
+    }
+    .m_input input:focus{
+        border-color: #66afe9;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+    .m_input .pass_swich {
+        font-size: 20px;
+        padding: 0 0 0 5px;
+        color: #a46;
+        cursor: pointer;
+        /* vertical-align: middle; */
+    }
+    .m_input .big_text {
+        display: none;
+        position: absolute;
+        top: -40px;
+        /* height:30px; */
+        padding: 0 7px;
+        min-width: 200px;
+        background-color: #4de;
+    }
+    .m_input .big_text::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #4de transparent transparent transparent;
+    }
+    .tul li {
+        background-color: #ddd;
+        height: 30px;
+        margin: 5px 0;
+    }
+    .cat {
+        border: 3px solid red;
+        position: absolute;
+        /* display: none; */
+        /* padding: 5px; */
+    }
+    .cat img {
+        display: block;
+        width: 80px;
+        height: 60px;
+        /* padding: 6px;
+        margin: 5px;
+        border: 7px solid #45f; */
+    }
+    .pbox {
+        width: 800px;
+        height: 200px;
+        margin: 20px auto 40px;
+        border: 1px solid #45f;
+
+    }
+    .pbox .p_title {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        background-color: #aaa;
+    }
+    .pbox .p_title li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        cursor: pointer;
+    }
+    .pbox .p_title .current {
+        background-color: #d20;
+    }
+    .pbox .p_cont {
+        padding: 10px;
+    }
+    .pbox .p_cont .item {
+        display: none;
+    }
+    .le_cont li {
+        position: relative;
+        width: 400px;
+    }
+    .le_cont li span {
+        position: absolute;
+        right: 5px;
+        color: red;
+        cursor: pointer;
+    }
+    .person_info {
+        width: 600px;
+        margin: 50px auto 0;
+        border: 1px solid #333;
+        background-color: #ddd;
+    }
+    .person_info .art_h, .per_detail li {
+        display: flex;
+    }
+    .person_info .art_h li, .per_detail li span {
+        width: 150px;
+        padding: 10px 0;
+        text-align: center;
+        color: #fff;
+    }
+    .per_detail li span {
+        width: 150px;
+        color: #333;
+        border-top: 1px solid #333;
+        border-right: 1px solid #333;
+    }
+    .per_detail li .del_per {
+        cursor: pointer;
+    }
+    .person_info .art_h li:nth-of-type(odd) {
+        background-color: #a32;
+    }
+    .person_info .art_h li:nth-of-type(even) {
+        background-color: #32a;
+    }
+    /* 模态框 */
+    .login-header {
+        position: relative;
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        /* text-align: center; */
+        white-space: nowrap;
+        margin: 20px auto;
+        background-color: #4de;
+    }
+    #loginLink {
+        display: block;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+    }
+    #loginFrame {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        z-index: 100;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center; */
+        text-align: center;
+        width: 600px;
+        height: 300px;
+        background-color: #eee;
+    }
+    #loginFrame input{
+        width: 400px;
+        border: 1px solid #ccc;
+        padding: 7px 0px;
+        border-radius: 3px;
+        padding-left:5px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+    }
+    #loginFrame input:focus{
+        border-color: #66afe9;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+    .move-place {
+        width: 100%;
+        height: 45px;
+        cursor: move;
+    }
+    .login-title {
+        font-size: 20px;
+    }
+    .login-button  {
+        font-size: 20px;
+    }
+    .login-title .close-login {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 50px;
+        height: 50px;
+        /* text-align: center;
+        line-height: 50px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid rgba(0,0,0,0.2);
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        background-color: rgba(255, 0, 0,0.9);
+    }
+    .login-content {
+        text-align: center;
+        padding: 30px 50px 0;
+    }
+    .login-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .login-input:first-of-type {
+        padding: 0 0 20px 0;
+    }
+    .login-button {
+        padding: 30px 0 0 0;
+    }
+    .login-button .login-submit {
+        padding: 5px 70px;
+        border: 1px solid rgba(0,0,0,0.2);
+        background-color: #dad;
+    }
+    .bg-mask {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background-color: rgba(0,0,0,0.7);
+        /* transition: all .3s; */
+    }
+    .slide_wrap {
+        position: relative;
+        width: 1400px;
+        margin: 0 auto;
+    }
+    .slide_bar {
+        position: absolute;
+        /* position: fixed; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* align-items: center; */
+        width: 40px;
+        height:280px;
+        background-color: #2af;
+        transition: transform 0.3s;
+    }
+    .slide_bar span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 70px;
+        font-size: 16px;
+        color: #fff;
+    }
+    .sec1, .sec3 {
+        width: 1400px;
+        height: 700px;
+        margin: 0 0 30px 0;
+    }
+    .sec1 {
+        background-color: #ad1;
+    }
+    .sec2 {
+        margin: 0 0 30px 0;
+    }
+    .p1, .p2, .p3 {
+        width: 100%;
+        height: 800px;
+        margin: 0 0 30px 0;
+        background-color: #1da;
+    }
+    .sec3 {
+        background-color: #d1a;
+    }
+
+</style>
+
+<body>
+    <div class="test">
+        <div class="inte"></div>
+    </div>
+    <p id="demo">点击按钮创建数组，并调用新建的 ucase() 方法, 最后显示结果。</p>
+
+    <!-- <button onclick="myFunction()">点我</button> -->
+    <button id="hhh" onclick="loadXMLDOC()">修改内容</button>
+    <button id="aaa">aaaaaaa</button>
+    <!-- <form action="" class="m_input">
+        <input class="password" type="">
+        <span class="show_pass icon-airplane pass_swich"></span>
+        <span class="big_text"></span>
+    </form> -->
+    <!-- <ul class="tul">
+        <li>第一个li</li>
+        <li>第二个li</li>
+        <li>第三个li</li>
+        <li>第四个li</li>
+    </ul> -->
+    <!-- <div class="cat">
+        <img src="./images/cat.gif" alt="">
+    </div> -->
+    <!-- <p style="height: 10000px">dfffffff</p> -->
+    <!-- <div class="pbox">
+        <ul class="p_title">
+            <li class="current">商品简介</li>
+            <li class="">规格与包装</li>
+            <li class="">售后保障</li>
+            <li class="">商品评价
+                <span>(2000)</span>
+            </li>
+        </ul>
+        <div class="p_cont">
+            <p class="item" style="display: block;">商品简介等等等等等等等等</p>
+            <p class="item">规格与包装等等等等等等等等</p>
+            <p class="item">售后保障等等等等等等等等</p>
+            <p class="item">商品评价等等等等等等等等</p>
+        </div>
+    </div> -->
+    <!-- <div class="le_cont">
+        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+        <button class="pub_cont" type="">发表评论</button>
+        <ul class="text_cont"></ul>
+    </div> -->
+    <!-- <div class="person_info">
+        <ul class="art_h">
+            <li>姓名</li>
+            <li>年龄</li>
+            <li>成绩</li>
+            <li>操作</li>
+        </ul>
+        <ul class="per_detail">
+        </ul>
+    </div> -->
+    <!-- <div class="test_interval">
+        <input type="text" name="" id="">
+        <button>发送</button>
+    </div> -->
+    <div class="login-header"><a id="loginLink" href="javascript:;">点击，弹出登录框</a></div>
+    <!-- 模态框 -->
+    <div id="loginFrame" class="login-frame">
+        <div class="move-place"></div>
+        <div id="loginTitle" class="login-title">登录会员
+            <span><a id="closeBtn" href="javascript:void(0);" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-content">
+            <div class="login-input">
+                <label for="username">用户名：</label>
+                <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="username">
+            </div>
+            <div class="login-input">
+                <label for="password">登录密码：</label>
+                <input type="password" placeholder="请输入密码" name="info[password]" id="password" class="password">
+            </div>
+        </div>
+        <div id="loginBtn" class="login-button"><a href="javascript:void(0)" id="loginSubmit" class="login-submit">登录</a></div>
+    </div>
+    <!-- 遮罩层 -->
+    <div id="bgMask" class="bg-mask"></div>
+
+    <div class="slide_wrap">
+        <div class="sec1">头部区域</div>
+        <div class="sec2">
+            <div class="p1">第一部分</div>
+            <div class="p2">第二部分</div>
+            <div class="p3">第三部分</div>
+        </div>
+        <div class="sec3">尾部区域</div>
+        <div class="slide_bar">
+            <span class="part1">第一部分</span>
+            <span class="part2">第二部分</span>
+            <span class="part3">第三部分</span>
+            <span class="back_top">顶部</span>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px"></div>
+    <!--
+        <script>
+        var q = null;
+        var m = 0;
+        var n = 0;
+        var x = 0;
+        do {
+            q = prompt("请输入您要的操作 \n 1.存钱 \n 2.取钱 \n 3.显示余额 \n 4.退出");
+            if (q == 1) {
+                m = prompt('存的金额');
+                x = m;
+                alert('共有' + m + '元');
+                continue;
+            } else if (q == 2) {
+                n = prompt('取的金额');
+                x = m - n;
+                alert('还剩' + x + '元');
+                continue;
+            } else if (q == 3) {
+                alert('余额为' + x + '元');
+                continue;}
+            else if (q == 4) {
+                break;
+            }
+        }
+        while (q)
+
+        var arr = [2, 6, 1, 7, 4];
+        var sum = 0;
+        var aver = 0;
+        for (const i of arr) {
+            sum = sum + arr[i];
+        }
+        aver = sum / arr.length;
+
+        console.log(sum);
+        console.log(aver);
+        var arr = [1, 3, 2, 7, 5, 9, 4, 10, 8, 6];
+        var max = arr[0];
+        for (const i of arr) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        console.log(max);
+        var arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = i;
+        }
+        console.log(arr);
+        var arr = [2, 5, 8, 3, 7, 9, 4, 10, 16, 13, 12];
+        var e = [];
+        //var j = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                //e[j] = arr[i];
+                //j++;
+                e[e.length] = arr[i];
+            }
+        }
+        console.log(e);
+        // console.log(j);
+        var arr1 = [1, 2, 3, 4, 5];
+        var newArr = [];
+        var al = arr1.length - 1;
+        // for (let i = 0; i < arr1.length;) {
+        //     newArr[i] = arr1[al - i];
+        //     i++;
+        // }
+        for (let i = al; i > 0; i--) {
+            newArr[newArr.length] = arr1[i];
+            
+        }
+        console.log(newArr);
+        // 冒泡排序
+        var arr = [2, 1, 5, 3, 4];
+        var t = arr.length - 1;
+
+        for (let i = 0; i < t; i++) {
+            for (let j = 0; j < t - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+    -->
+    <script>
+        /**
+        var n1 = prompt("请输入第一个数字");
+        var n2 = prompt("请输入第二个数字");
+        var x = prompt("请输入运算符");
+        switch(x) {
+            case '+':
+                console.log(n1+n2);
+                break;
+            case '-':
+                console.log(n1-n2);
+                break;
+            case '*':
+                console.log(n1*n2);
+                break;
+            case '/':
+                console.log(n1/n2);
+                break;
+        }
+        var obj = {
+            a: 1,
+            b: 2,
+            c: function() {
+                console.log("abc");
+            }
+        }
+        obj.c();
+        var oo = new Object();
+        oo.a = 1;
+        oo.b = 'b';
+        function Person() {
+
+        }
+        function foo(){ 
+            // return function(){
+                console.log( this.h );
+            // }
+        }
+
+        var h = 2;
+
+        var objt = { 
+            h: 3,
+            foo: foo 
+        };
+
+        // objt.foo();
+        console.log(objt.foo());
+        // console.log(objt.foo);
+        var obj = {
+            name: 'm',
+            age: 20,
+            gender: '男'
+        }
+
+        var myArray=['a',2,4,5,6,7];
+        myArray.name="数组";
+        for (var index in myArray) {
+            // console.log(myArray[index]);
+            console.log(index);
+        }
+        for (let index = 0; index < myArray.length; index++) {
+            console.log(index);
+        }
+        console.log('----------------------------------');
+        for (const value of myArray) {
+            console.log(value);
+        }
+        var myObject={
+        　　a:1,
+        　　b:2,
+        　　c:3
+        }
+        // for (var key in myObject) {
+        //     console.log(key);
+        // }
+        for (const key in myObject) {
+            if (Object.hasOwnProperty.call(myObject, key)) {
+                const e = myObject[key];
+                console.log(e);
+            }
+            // if (myObject.hasOwnProperty(key)) {
+            //     console.log(key);
+            // }
+        }
+        var arr = ["a", "b", "c"];
+        var m = arr.map((element, index) => {
+            return element += 'hhhh';
+        });
+        console.log(m);
+
+        // arr.forEach((element, index) => {
+        //     // console.log(element);
+        //     console.log(index);
+        // });
+        var arr = [12, 5, 8, 130, 44];
+        var mm = arr.filter(function(value){
+            return value > 10;
+        });
+        var m1 = arr.filter((value) => value > 10);
+        var m2 = arr.some(function(value){
+            return value>10
+        });
+        var m3 = arr.every(function(value){
+            return value>10
+        });
+        console.log(m3);
+        let arr = [3,2,5,8,4];
+        function asco(a, b) {
+            return a - b;
+        }
+        function desco(a, b) {
+            return b - a;
+        }
+        let m = arr.sort(desco);
+        console.log(m);
+        let str = "abcdefgabcabc";
+        let o = {};
+        for (let i = 0; i < str.length; i++) {
+            let isa = str[i];
+            if (o[isa]) {
+                o[isa]++;
+            } else {
+                o[isa] = 1;
+            }
+            
+        }
+        console.log(o);
+        let ok = '';
+        let max = 0;
+        for (const key in o) {
+            if (Object.hasOwnProperty.call(o, key)) {
+                if (max < o[key]) {
+                    max = o[key];
+                }
+            }
+        }
+        console.log(max);
+        // let m = null;
+        // console.log(typeof m);
+        Array.prototype.myUcase=function()
+        {
+            for (i=0;i<this.length;i++)
+            {
+                this[i]=this[i].toUpperCase();
+            }
+            console.log(this);
+        }
+
+        function myFunction()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.myUcase();
+            var x=document.getElementById("demo");
+            x.innerHTML=fruits;
+        }
+        let m =  [1, 3, 4,5 ,6, 6];
+        Date.prototype.format = function (fmt) {
+        var o = {
+        "M+": this.getMonth() + 1,                   //月份
+        "d+": this.getDate(),                        //日
+        "h+": this.getHours(),                       //小时
+        "m+": this.getMinutes(),                     //分
+        "s+": this.getSeconds(),                     //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds()                  //毫秒
+        };
+
+        //  获取年份 
+        // ①
+        if (/(y+)/i.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        console.log(RegExp.$1);
+        }
+
+        for (var k in o) {
+        // ②
+        if (new RegExp("(" + k + ")", "i").test(fmt)) {
+            fmt = fmt.replace(
+            RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        console.log(RegExp.$1);
+
+        }
+        }
+        return fmt;
+        }
+
+        var now = new Date();
+        var nowStr = now.format("YYYY-MM-DD"); // 2021-01-11
+        $(function() { });
+        $(document).ready(function () { });
+        JSON.parse('{"p": 5}', function(k, v) {
+        if (k === '') { return v; } 
+        console.log(k);
+        console.log(v);
+        return v * 2;
+        });
+        JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', function(k, v) {
+
+        console.log(k);
+        console.log(v);
+        return v;       // 返回修改的值
+        });
+        javascript:void(0)
+        var json = '{"name":"Harvy", "age":36, "gender":"male"}';
+        var person = JSON.parse(json, function (key, value) {
+        // console.log(key);
+        console.log(value);
+        if(key != "")
+            return "<font color=\"blue\">"+value+"</font>";
+        else
+            return value;
+        });
+        var arr = [ "Google", "Runoob", "Taobao", "Facebook" ];
+        var myJSON = JSON.stringify(arr);
+        document.getElementById("demo").innerHTML = myJSON;
+        console.log(typeof myJSON);
+        console.log(typeof arr);
+
+        function callbackFunction(result, methodName)
+        {
+        var html = '<ul>';
+        for(var i = 0; i < result.length; i++)
+        {
+            html += '<li>' + result[i] + '</li>';
+        }
+        html += '</ul>';
+        document.getElementById('hhh').innerHTML = html;
+        }
+        function loadXMLDOC() {
+        let xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("hhh").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", "test.xml");
+        xmlhttp.send();
+        }
+        */
+    </script>
+    <!-- <script type="text/javascript" src="https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction"></script> -->
+    <script>
+        /**
+        // 显示和隐藏密码
+        let showpass = document.getElementsByClassName("show_pass")[0];
+        showpass.addEventListener('click', show_pass);
+        let flag = 0;
+        function show_pass() {
+            let pass = document.getElementsByClassName("password")[0];
+            if (flag == 0) {
+                pass.type = "text";
+                flag = 1;
+            } else {
+                pass.type = "password";
+                flag = 0;
+            }
+             // if (pass.type != "password") {
+             //     pass.type = "password";
+             // } else {
+             //     pass.type = "text";
+             // }
+        }
+        let f = document.getElementsByClassName("test")[0];
+        let s = document.getElementsByClassName("inte")[0];
+        s.addEventListener('click', function(e) {
+             // alert("sssss");
+            console.log(e);
+            console.log(e.type);
+             console.log(e.target); // 触发事件的对象
+             console.log(this); // 绑定事件的对象
+        })
+         // f.addEventListener('click', function() {
+         //     alert("fffff");
+         // }, true);
+        let ul = document.getElementsByClassName("tul")[0];
+        let flag = 1;
+        ul.addEventListener('click', function (e) {
+            console.log("触发到ul");
+            let tli = e.target;
+            tli.style.color = "#4f5";
+            if (flag) {
+                tli.style.color = "#4f5";
+                flag = 0;
+            } else {
+                tli.style.color = "#333";
+                flag = 1;
+            }
+        });
+        // 元素跟随鼠标
+        document.addEventListener("mousemove", cat_move);
+        function cat_move(e) {
+            let cat = document.getElementsByClassName("cat")[0];
+            let x = e.pageX;
+            let y = e.pageY;
+
+            let clone_cat = cat.cloneNode(true);
+            clone_cat.style.left = x + "px";
+            clone_cat.style.top = y + "px";
+
+            cat.parentNode.replaceChild(clone_cat, cat);
+            // console.log(e.pageYOffset);
+            // cat.style.display = "block";
+        }
+        // 字体放大显示
+        let pass_inp = document.getElementsByClassName('password')[0];
+        pass_inp.addEventListener("keyup", show_big_words);
+        function show_big_words() {
+            let big_word = document.getElementsByClassName('big_text')[0];
+            if (this.value == '') {
+                big_word.style.display = "none";
+            } else {
+                big_word.style.cssText = "display:block; font-size: 30px";
+                big_word.innerText = this.value;
+            }
+            pass_inp.addEventListener("blur", 失去焦点);         
+            pass_inp.addEventListener("focus", 获取焦点);         
+        }
+         */
+    </script>
+    <script>
+        // 递归
+        // function show(n) {
+        //     let arr = [];
+        //     return (function m() {
+        //         arr.unshift(n);
+        //         n--;
+        //         if ( n > 0 ) {
+        //             m();
+        //         }
+        //         return arr;
+        //     })();
+        // }
+        // let mm = show(5);
+        // console.log(mm);
+        /**
+        // tab切换
+        let p_tit = document.querySelector('.p_title');
+        let p_cur = p_tit.getElementsByTagName('li');
+        let p_cont = document.querySelector('.p_cont');
+        let p_items = p_cont.getElementsByClassName('item');
+        // let p_items =  p_cont.children;
+        console.log(p_cont);
+        for (let i = 0; i < p_cur.length; i++) {
+            const ele = p_cur[i];
+            ele.addEventListener('click',turnRedBG);
+            ele.setAttribute('data-index', i);
+            function turnRedBG() {
+                // let curr_li = e.target;
+                // console.log(curr_li.nodeName);
+                // let curr_name = curr_li.className;
+                // if (curr_name.indexOf('current') == -1 && curr_li.tagName == 'LI') {
+                    //     curr_li.className = 'current';
+                    // }
+                    
+                    // 排他思想
+                    // li标题
+                // let index = this.getAttribute('data-index');
+                let index = this.dataset.index;
+                // console.log(index);
+                for (let i = 0; i < p_cur.length; i++) {
+                    const ele = p_cur[i];
+                    ele.className = '';
+                }
+                this.className = 'current';
+                // 下面的内容
+                for (let i = 0; i < p_items.length; i++) {
+                    const ele = p_items[i];
+                    ele.style.display = 'none';
+                }
+                p_items[index].style.display = 'block';
+            }
+        }
+        let ul = document.querySelector('ul');
+        let fc = ul.firstElementChild;
+        console.log(fc);
+        // 添加删除评论
+        let textarea = document.getElementById('textarea');
+        let text_cont = document.querySelector('.text_cont');
+        let pub_cont = document.querySelector('.pub_cont');
+        pub_cont.addEventListener('click', pubCont);
+        function pubCont(e) {
+            let cont = textarea.value;
+            if (cont) {
+                let li_cont = document.createElement('li');
+                li_cont.innerHTML = cont + '<span>删除</span>';
+                // text_cont.appendChild(li_cont);
+                text_cont.insertBefore(li_cont, text_cont.children[0]);
+            }
+            // else {
+            //     return 0;
+            // }
+
+            if (text_cont.children.length != 0 && cont) {
+                let del_cont = text_cont.getElementsByTagName('span');
+                // document.querySelectorAll('.text_cont span');
+                        // console.log(del_cont);
+                for (let i = 0; i < del_cont.length; i++) {
+                    // const del_span = del_cont[i];
+                    // del_span.onclick = function() {
+                    //     console.log(text_cont);
+                    //     text_cont.removeChild(this.parentNode);
+                    // }
+                    let delContent = del_cont[i].addEventListener('click', delCont);
+                    function delCont() {
+                        // console.log(text_cont);
+                        text_cont.removeChild(this.parentNode);
+                    }
+                    break;
+                }
+            }
+        }
+        // 填充表格数据
+        let datas = [{
+            "name": "小明",
+            "age": 17,
+            "score": 78
+        },{
+            "name": "小红",
+            "age": 18,
+            "score": 88
+        },{
+            "name": "小亮",
+            "age": 19,
+            "score": 98
+        }];
+        let per_ul = document.querySelector('.per_detail');
+        for (let i = 0; i < datas.length; i++) {
+            const ele1 = datas[i];
+            let per_li = document.createElement('li');
+            per_ul.appendChild(per_li);
+            for (const key in ele1) {
+                if (Object.hasOwnProperty.call(ele1, key)) {
+                    const ele2 = ele1[key];
+                    let per_span = document.createElement('span');
+                    per_span.innerHTML = ele2;
+                    per_li.appendChild(per_span);
+                }
+            }
+            let del_span = document.createElement('span');
+            del_span.className = 'del_per';
+            del_span.innerHTML = '删除';
+            per_li.appendChild(del_span);
+        }
+        // 删除表格数据
+        let del_per = document.getElementsByClassName('del_per');
+        for (let i = 0; i < del_per.length; i++) {
+            const ele= del_per[i];
+            ele.addEventListener('click', delPer);
+            function delPer() {
+                per_ul.removeChild(this.parentNode);
+            }
+            // console.log(1);
+        }
+        */
+    </script>
+    <script>
+        /*
+        let btn = document.querySelector('.test_interval button');
+        let time = 3;
+        btn.addEventListener('click', () => {
+            this.disabled = true;
+            const countime = () => {
+                if (time == 0) {
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    time = 3;
+                } else {
+                    btn.innerHTML = `还剩${time}秒`;
+                    time--;
+                }
+                return countime;
+            }
+            let timer = setInterval(countime(), 1000);
+        });
+        */
+    </script>
+    <script>
+        /*
+        let num = 5;
+        function getEle(ele) {
+            let box = document.querySelector(ele);
+            // let ele_cont = countDown();
+            // if (!ele_cont) clearInterval(int_getEle);
+            if (num == 0) {
+                clearInterval(int_getEle);
+                // location.href = 'https://detimong.com';
+                return false;
+            }
+            box.innerHTML = `页面将在${num}秒后跳转至主页`;;
+            num--;
+            // console.log(num);
+        }
+        getEle('.test');
+        let int_getEle = setInterval(getEle, 1000, '.test');
+        // 获取浏览器型号
+        console.log(navigator.userAgent);
+        var os = function() {
+            var ua = navigator.userAgent,
+                isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                isAndroid = /(?:Android)/.test(ua),
+                isFireFox = /(?:Firefox)/.test(ua),
+                isChrome = /(?:Chrome|CriOS)/.test(ua),
+                isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+                isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                isPc = !isPhone && !isAndroid && !isSymbian;
+            return {
+                isTablet: isTablet,
+                isPhone: isPhone,
+                isAndroid: isAndroid,
+                isPc: isPc
+            };
+        }();
+
+        if(os.isAndroid || os.isPhone) {
+            alert("手机")
+        } else if(os.isTablet) {
+            alert("平板")
+        } else if(os.isPc) {
+            alert("电脑")
+        }
+        */
+
+    </script>
+    <script>
+        /**
+        let login_header = document.getElementsByClassName('login-header')[0];
+        let login_frame = document.getElementsByClassName('login-frame')[0];
+        let bg_mask = document.getElementsByClassName('bg-mask')[0];
+        let close_login = document.getElementsByClassName('close-login')[0];
+        let move_place = document.getElementsByClassName('move-place')[0];
+        
+        function showFrame() {
+            login_frame.style.display = 'block';
+            bg_mask.style.display = 'block';
+        }
+        function hideFrame() {
+            login_frame.style.display = 'none';
+            bg_mask.style.display = 'none';
+        }
+        login_header.addEventListener('click', showFrame);
+        close_login.addEventListener('click', hideFrame);
+        
+        let mouseDown = (e) => {
+            // 鼠标在盒子内的坐标
+            let fix_w = e.pageX - login_frame.offsetLeft;
+            let fix_h = e.pageY - login_frame.offsetTop;
+            // console.log(e);
+            let mouseMove = (e) => {
+                login_frame.style.top = `${e.pageY - fix_h}px`;
+                login_frame.style.left = `${e.pageX - fix_w}px`;
+                // let top = getComputedStyle(login_frame, null).top;
+                // let right = getComputedStyle(login_frame, null).right;
+                // let bottom = getComputedStyle(login_frame, null).bottom;
+                // let left = getComputedStyle(login_frame, null).left;
+                
+                // if (top == 0 || right == 0 || bottom == 0 || left == 0) {
+                //     move_place.removeEventListener('mousemove', mouseMove);
+                // }
+                // e.stopPropagation();
+            }
+            let mouseUp = () => {
+                move_place.removeEventListener('mousemove', mouseMove);
+            }
+            move_place.addEventListener('mousemove', mouseMove);
+            move_place.addEventListener('mouseup', mouseUp);
+        }
+        move_place.addEventListener('mousedown', mouseDown);
+        */
+
+        //slidebar 效果
+        let slide_bar = document.getElementsByClassName('slide_bar')[0];
+        let sec2 = document.getElementsByClassName('sec2')[0];
+        let slide_wrap = document.getElementsByClassName('slide_wrap')[0];
+
+        let slidebar_w = slide_bar.offsetWidth + 5;
+        let sec2Top = sec2.offsetTop;
+        // let isScrollTop = sec2Top + slide_wrap.offsetTop;
+        let slide_wrap_w = slide_wrap.offsetWidth + 5;
+        let sec2_eles = sec2.children;
+        let slidebar_eles = slide_bar.children;
+
+        const slidebar_css = {
+            _position: 'position',
+            _top:'top',
+            _right:'right',
+            _transform:'transform',
+            _marginLeft: "margin-left"
+        }
+        const {
+            _position,
+            _top,
+            _right,
+            _transform,
+            _marginLeft } = slidebar_css;
+
+        slide_bar.style.cssText += `${_right}: ${-slidebar_w}px; ${_top}: ${sec2Top}px`;
+        
+        function fixSlidebar() {
+            let scroll_Y = window.pageYOffset - slide_wrap.offsetTop;
+            if (scroll_Y >= sec2Top) {
+                // slide_bar.style.position = 'sticky';
+                slide_bar.style.cssText = `${_transform}: translateY(30px); ${_position}:fixed; ${_top}: 0; ${_marginLeft}: ${slide_wrap_w}px`;
+                // slid
+            } else {
+                slide_bar.style.cssText = `${_position}:absolute; right: -${slidebar_w}px; ${_top}: ${sec2Top}px`;
+            }
+            for (const i of sec2_eles) {
+                let i_bro = i.nextElementSibling || i;
+                console.log(i_bro.offsetTop);
+                console.log('aaaaa:   ' + i.offsetTop);
+                if (scroll_Y >= i.offsetTop) {
+                    console.log(111);
+                    // for (const j of slidebar_eles) {
+                    // }
+                    }
+            }
+        }
+        document.addEventListener('scroll', fixSlidebar);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@mixin m_flex($jc:center, $ai:center) {
+    display: flex;
+    // flex-direction: $direc;
+    justify-content: $jc;
+    align-items: $ai;
+}
+@mixin m_bg($img_path, $pos:center, $size:cover, $repeat:no-repeat) {
+    background-image: url($img_path);
+    background-position: $pos;
+    background-size: $size;
+    background-repeat: $repeat;
+}

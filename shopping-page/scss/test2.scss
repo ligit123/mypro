@@ -1,0 +1,199 @@
+@import "mixin";
+.m_nav {
+    margin: 0 auto;
+    position: relative;
+    width: 560px;
+    padding: 30px 0 0 0;
+    .slipper {
+        position: absolute;
+        width: 80px;
+        height: 40px;
+        background-color: gold;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .navs {
+        @include m_flex();
+    }
+    a {
+        width: 80px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+            color: #22f
+        }
+    }
+}
+
+.m_test {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: #da2;
+}
+
+.sliwrap {
+    position: relative;
+    overflow: hidden;
+    .indicators {
+        @include m_flex();
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        z-index: 2;
+        span {
+            display: block;
+            margin: 0 20px 0 0;
+            width: 20px;
+            height: 20px;
+            background-color: #4f3;
+            border-radius: 20%;
+            transition: width 0.2s;
+        }
+        .indicator_active {
+            width: 40px;
+        }
+    }
+    .pics {
+        @include m_flex();
+        width: 500%;
+        a {
+            display: block;
+            // padding: 0;
+            // margin: 0;
+            transform: translateX(-100%);
+        }
+        img {
+            width: 100%;
+            // height: 100%;
+        }
+    }
+}
+
+.pinf {
+    @include m_flex();
+    height: 300px;
+    .pname {
+        @include m_flex();
+        flex-direction: column;
+        height: 100%;
+        span {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                background-color: #df1;
+            }
+        }
+    }
+    .ppic {
+        position: relative;
+        width: 200px;
+        height: 100%;
+        img {
+            position: absolute;
+            width: 200px;
+        }
+    }
+}
+
+.comment {
+    @include m_flex();
+    flex-direction: column;
+    .com_cont {
+        .one_cont {
+            @include m_flex(space-between);
+            width: 250px;
+        }
+        span {
+            cursor: pointer;
+            color: #22f;
+        }
+    }
+}
+
+.todolist {
+    .listitwrap {
+        width: 100%;
+        height: 60px;
+        background-color: rgb(33 88 99 / 70);
+    }
+    .listit {
+        @include m_flex(space-between);
+        width: 700PX;
+        margin: 0 auto;
+        line-height: 60px;
+        p {
+            // padding: 0 200px 0 0;
+            font-size: 30px;
+            color: #fff;
+        }
+        .dowhat {
+            width: 400px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: 1px solid #4f3;
+            color: #333;
+            appearance: none;
+            display: block;
+            outline: 0;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    }
+    h3 {
+        width: 700px;
+        margin: 0 auto;
+        padding: 30px 0 0 0;
+        font-size: 40px;
+    }
+    .m_doing, .m_done {
+        width: 700px;
+        // height: 100px;
+        margin: 0 auto;
+        padding: 0 0 12px 0;
+        .what {
+            @include m_flex(space-between);
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            background-color: rgba(#af9, 0.8);
+            border-radius:4px;
+            .thing {
+                position: absolute;
+                left: 40px;
+                line-height: 40px;
+            }
+            .don {
+                margin: 0 0 0 10px;
+                width: 20px;
+                height: 20px;
+            }
+            .m_rem {
+                margin: 0 10px 0 0;
+                font-size: 22px;
+                color: #666;
+                cursor: pointer;
+            }
+        }
+    }
+    .m_done .what {
+        filter: grayscale(100%);
+        .thing, .m_rem {
+            color: #888;
+        }
+        .don {
+            outline: 0;
+            text-decoration: none;
+            // appearance: none;
+            border: 1px solid #888;
+        }
+    }
+}

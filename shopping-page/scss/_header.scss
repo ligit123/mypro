@@ -1,0 +1,147 @@
+// @import "icon";
+@import "mixin";
+@import "var";
+/** 头部区域，包括logo和搜索框 **/
+.header {
+    @include m_flex(space-around);
+    height: 200px;
+    .logo {
+        // padding: 0 0 0 10px;
+        a {
+            display: block;
+            width: 150px;
+            height: 100px;
+            @include m_bg('../images/logo.png');
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+    }
+    .search {
+        @include m_flex(space-between);
+        flex-direction: column;
+        width: 900px;
+        height: 180px;
+        text-align: center;
+    }
+
+    .searcart_box, .navitems, .sear_hw{
+        @include m_flex();
+        flex-wrap: wrap;
+    }
+    .sear_hw {
+        padding: 40px 0 0 0;
+    }
+
+    .searcart_box {
+        @include m_flex();
+        height: 40px;
+        line-height: 40px;
+        .search_box, .photo_search_btn, .button, .shop_cart {
+            height: 40px;
+            line-height: 40px;
+        }
+        /** 搜索框 **/
+        .search_box {
+            @include m_flex(space-between);
+            // width: 450px;
+            border: 2px solid $mainred;
+            input {
+                border: none;
+                background: none;
+                outline: none;
+                width: 400px;
+                font-size: 16px;
+                height: 100%;
+                padding: 0 0 0 10px;
+            }
+
+            .photo_search_btn {
+                margin: 0 10px;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    color: $mainred;
+                }
+            }
+            .button {
+                width: 50px;
+                border: none;
+                color: #eee;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: $mainred;
+                cursor: pointer;
+                &:hover {
+                    background-color: $mainred_hover;
+                }
+            }
+        }
+
+        /** 购物车 **/
+        .shop_cart {
+            position: relative;
+            width: 160px;
+            text-align: center;
+            margin: 0 0 0 20px;
+            color: $mainred;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            a {
+                margin: 0 0 0 10px;
+                color: $mainred;
+            }
+            .cart_count {
+                position: absolute;
+                top: 2px;
+                left: 35px;
+                right: auto;
+                font-size: 13px;
+                line-height: 13px;
+                padding: 0 4px;
+                color: #fff;
+                background-color: $mainred;
+                border-radius: 7px;
+            }
+            &:hover {
+                border: 1px solid $mainred;
+            }
+        }
+    }
+
+    /** 热门推荐 **/
+    .hotwords {
+        width: 670px;
+        padding: 7px 0 0 0;
+        font-size: 14px;
+        text-align: start;
+        a {
+            margin: 0 10px 0 0;
+            &:hover {
+                color: $mainred;
+            }
+        }
+    }
+    /** 其他 导航 **/
+    .navitems {
+        ul {
+            @include m_flex();
+            font-size: 20px;
+            padding: 0 10px 0 0;
+            li {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    /** 推广 **/
+    .else {
+        width: 180px;
+        height: 120px;
+        // background-color: #4d4;
+        a {
+            display: block;
+            width: 180px;
+            height: 120px;
+           background-size: cover;
+        }
+    }
+}
